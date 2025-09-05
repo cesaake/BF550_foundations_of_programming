@@ -28,3 +28,63 @@ This setup guide ensures you have a reliable and consistent coding environment t
 conda create -n TEZ python=3.10 numpy pandas matplotlib scikit-learn jupyterlab -y
 
 
+## Activate Environment
+conda activate TEZ
+conda deactivate
+
+
+## Remove Environmet
+
+conda env remove -n TEZ
+
+## Using environemnt.yml
+name: TEZ
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy
+  - pandas
+  - matplotlib
+  - scikit-learn
+  - jupyterlab
+
+## Crete environment with YAML
+conda env create -f environment.yml
+
+
+## Basic Conda Commands:
+
+# List environments
+conda env list
+
+# List installed packages
+conda list
+
+# Export package list (not environment file)
+conda list --export > requirements.txt
+
+# Update Conda
+conda update conda
+
+# Clean cache
+conda clean --all
+
+
+## Github Essentials
+# Initialize Git
+git init
+
+# Add GitHub repo as remote
+git remote add origin https://github.com/yourusername/your-repo.git
+
+# Add all files
+git add .
+
+# Commit changes
+git commit -m "Initial commit"
+
+# Push to main branch
+git push -u origin main
+
