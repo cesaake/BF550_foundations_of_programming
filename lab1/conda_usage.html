@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Conda Environment Tutorial</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    code, pre {
+      background: #eee;
+      padding: 6px;
+      border-radius: 4px;
+      display: block;
+      overflow-x: auto;
+    }
+    .box {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📘 Conda Environment Tutorial for Students</h1>
+
+  <div class="box">
+    <h2>1️⃣ What is a Conda Environment?</h2>
+    <p>A <strong>Conda environment</strong> is an isolated workspace that includes its own Python version and packages. This allows students and developers to avoid version conflicts and manage project-specific dependencies easily.</p>
+  </div>
+
+  <div class="box">
+    <h2>2️⃣ Creating a Conda Environment</h2>
+    <p>Create an environment named <code>TEZ</code> with Python 3.10 and some useful packages like <code>numpy</code>, <code>pandas</code>, and <code>jupyterlab</code>:</p>
+    <pre><code>conda create -n TEZ python=3.10 numpy pandas matplotlib scikit-learn jupyterlab -y</code></pre>
+    <p>📌 <code>-n TEZ</code> gives the environment its name.<br>
+       📌 <code>-y</code> auto-approves installation.<br>
+       📌 <code>jupyterlab</code> is a common tool used by students for interactive coding.</p>
+  </div>
+
+  <div class="box">
+    <h2>3️⃣ Activating & Deactivating the Environment</h2>
+    <pre><code># Activate the TEZ environment
+conda activate TEZ
+
+# Deactivate the current environment
+conda deactivate
+</code></pre>
+  </div>
+
+  <div class="box">
+    <h2>4️⃣ Listing and Removing Environments</h2>
+    <pre><code># List all available Conda environments
+conda env list
+
+# Remove the TEZ environment
+conda env remove -n TEZ
+</code></pre>
+  </div>
+
+  <div class="box">
+    <h2>5️⃣ Creating Environment with YAML File</h2>
+    <p>Instead of typing all packages in one line, you can use a <code>environment.yml</code> file:</p>
+
+    <h3>🔹 Sample <code>environment.yml</code></h3>
+    <pre><code>name: TEZ
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy
+  - pandas
+  - matplotlib
+  - scikit-learn
+  - jupyterlab</code></pre>
+
+    <h3>🔹 Create Environment from YAML</h3>
+    <pre><code>conda env create -f environment.yml</code></pre>
+
+    <h3>🔹 Update Environment from YAML</h3>
+    <pre><code>conda env update -f environment.yml --prune</code></pre>
+
+    <h3>🔹 Export Current Environment</h3>
+    <pre><code>conda env export --name TEZ > environment.yml</code></pre>
+  </div>
+
+  <div class="box">
+    <h2>6️⃣ Bonus: Clean Up Conda</h2>
+    <p>Remove unused files and cache to save disk space:</p>
+    <pre><code>conda clean --all</code></pre>
+  </div>
+
+  <div class="box">
+    <h2>✅ Summary Cheat Sheet</h2>
+    <pre><code># Create environment with packages
+conda create -n TEZ python=3.10 numpy pandas jupyterlab -y
+
+# Activate / Deactivate
+conda activate TEZ
+conda deactivate
+
+# List / Remove environments
+conda env list
+conda env remove -n TEZ
+
+# Create from YAML
+conda env create -f environment.yml
+
+# Update from YAML
+conda env update -f environment.yml --prune
+
+# Export environment
+conda env export --name TEZ > environment.yml
+
+# Clean conda cache
+conda clean --all
+</code></pre>
+  </div>
+
+  <p style="text-align: center; color: #666;">🧠 Tutorial by ChatGPT | For Python & Data Science Students</p>
+
+</body>
+</html>
+
