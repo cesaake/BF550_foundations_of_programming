@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Python Environment Setup with Conda</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      line-height: 1.6;
+      margin: 2rem;
+      max-width: 900px;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    nav {
+      background: #ecf0f1;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+    }
+    nav a {
+      margin-right: 20px;
+      text-decoration: none;
+      color: #2980b9;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 1em;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    code {
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Python Environment Setup with Conda</h1>
+
+  <nav>
+    <a href="#comparison">Miniconda vs Full Anaconda</a>
+    <a href="#tutorial">Conda Tutorial</a>
+    <a href="#env-yaml">Using YAML Files</a>
+    <a href="#commands">Basic Conda Commands</a>
+  </nav>
+
+  <section id="comparison">
+    <h2>Miniconda vs Full Anaconda (Distribution Installers)</h2>
+
+    <p><strong>Miniconda</strong> is a minimal installer for Conda, while <strong>Anaconda Distribution</strong> includes Conda and hundreds of preinstalled packages.</p>
+
+    <table border="1" cellpadding="8" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Miniconda</th>
+          <th>Full Anaconda</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Size</td>
+          <td>~50 MB</td>
+          <td>~3–4 GB</td>
+        </tr>
+        <tr>
+          <td>Packages</td>
+          <td>Only Conda + Python</td>
+          <td>Includes 250+ packages</td>
+        </tr>
+        <tr>
+          <td>Flexibility</td>
+          <td>Highly customizable</td>
+          <td>Preconfigured for data science</td>
+        </tr>
+        <tr>
+          <td>Best for</td>
+          <td>Lightweight, custom setups</td>
+          <td>Quick start for data science</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="tutorial">
+    <h2>Conda Environment Setup Tutorial</h2>
+
+    <p>Here’s how to create and manage a Conda environment called <code>TEZ</code> with useful Python packages:</p>
+
+    <pre><code># Create environment with Python 3.10 and common packages
+conda create -n TEZ python=3.10 numpy pandas matplotlib scikit-learn jupyterlab -y
+
+# Activate environment
+conda activate TEZ
+
+# Deactivate environment
+conda deactivate
+
+# Remove environment
+conda env remove -n TEZ
+</code></pre>
+  </section>
+
+  <section id="env-yaml">
+    <h2>Using YAML Files for Reproducibility</h2>
+
+    <p>Create an <code>environment.yml</code> file to share or reproduce environments:</p>
+
+    <pre><code>name: TEZ
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy
+  - pandas
+  - matplotlib
+  - scikit-learn
+  - jupyterlab
+</code></pre>
+
+    <p>Commands to work with YAML files:</p>
+
+    <pre><code># Create env from YAML
+conda env create -f environment.yml
+
+# Update existing env
+conda env update -f environment.yml --prune
+
+# Export current env
+conda env export --name TEZ > environment.yml
+</code></pre>
+  </section>
+
+  <section id="commands">
+    <h2>Basic Conda Commands</h2>
+
+    <pre><code># List all environments
+conda env list
+
+# List installed packages in current environment
+conda list
+
+# Export list of packages
+conda list --name TEZ --export > requirements.txt
+
+# Update Conda itself
+conda update conda
+
+# Clean up caches
+conda clean --all
+</code></pre>
+  </section>
+
+  <footer style="margin-top: 4rem; font-size: 0.9em; color: gray;">
+    <p>Created for Python Foundations Course – Conda and Environment Setup Guide</p>
+  </footer>
+
+</body>
+</html>
+
