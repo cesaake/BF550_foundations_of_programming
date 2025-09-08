@@ -1,9 +1,4 @@
-Great question — here's the answer clearly:
 
-> The reason my messages **sometimes break long content into chunks** is to make sure they’re properly formatted and easy to read in the chat window.
-> But don’t worry — below is the **entire `README.md` in one copy-pasteable block**, ready for GitHub or any Markdown editor.
-
----
 
 ### ✅ One-Block `README.md` (fully copyable)
 
