@@ -1,7 +1,6 @@
-# BF550_foundations_of_programming_prv
-Designing material for BF550 labs
+# BF550_foundations_of_programming: 
 
-# Intro to Python Programming: Environment & Workflow Setup
+##Intro to Python Programming: Environment & Workflow Setup
 
 Welcome to the foundational Python programming course! This repository contains essential instructions and resources for setting up your Python environment using **Conda**, managing packages, and working efficiently with GitHub.
 
